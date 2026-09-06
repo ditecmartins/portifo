@@ -4,5 +4,13 @@ $('.projetos').slick({
     autoplay: true,
     autoplaySpeed: 2000,
     dots: true,
-    infinite:true
+    infinite: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
   });

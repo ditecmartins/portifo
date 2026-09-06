@@ -16,6 +16,12 @@
   --color-background: #eef3f5;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -36,6 +42,7 @@ header h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   letter-spacing: 0.02em;
+  overflow-wrap: anywhere;
 }
 
 header small {
@@ -46,7 +53,14 @@ header small {
 .nav-link {
   font-size: 1rem;
   font-weight: 600;
+  padding: 0.5rem 0.75rem;
   transition: color 0.2s ease, transform 0.2s ease;
+}
+
+header .nav {
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 0.35rem;
 }
 
 .nav-link:hover,
@@ -61,6 +75,7 @@ section.container {
   border-radius: 6px;
   box-shadow: 0 8px 24px rgba(23, 33, 43, 0.08);
   color: var(--color-ink);
+  overflow: hidden;
 }
 
 section h3 {
@@ -98,6 +113,18 @@ section p {
   object-fit: cover;
 }
 
+.projetos .slick-slide {
+  padding: 0 0.5rem;
+}
+
+.projetos .slick-list {
+  margin: 0 -0.5rem;
+}
+
+section img {
+  max-width: 100%;
+}
+
 @media (max-width: 576px) {
   body {
     font-size: 15px;
@@ -107,8 +134,35 @@ section p {
     font-size: 2rem;
   }
 
+  header .container {
+    padding: 1.25rem 0.75rem !important;
+  }
+
+  header .nav-link {
+    font-size: 0.9rem;
+    padding: 0.35rem 0.5rem;
+  }
+
+  section.container {
+    margin-top: 1.5rem !important;
+    padding: 1rem !important;
+  }
+
   section h3 {
     font-size: 1.4rem;
+    margin-bottom: 1.5rem !important;
+  }
+
+  section h4 {
+    font-size: 1.15rem;
+  }
+
+  .row.mt-3 {
+    margin-top: 1rem !important;
+  }
+
+  .progress {
+    height: 1.1rem;
   }
 
   .company-img {
